@@ -8,9 +8,9 @@ public interface IOperarEstoque {
 
     boolean fecharEstoque();
 
-    void acrescentarProduto(int quantidade);
+    void acrescentarProduto(Produto produto, int quantidade);
 
-    void retirarProduto(int quantidade);
+    void retirarProduto(Produto produto ,int quantidade);
 
     void pesquisar(String nome);
 

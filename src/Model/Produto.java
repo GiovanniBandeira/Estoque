@@ -13,6 +13,11 @@ abstract public class Produto {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
 
+    public Produto(String nome, int quantidadeEmEstoque){
+        this.nome = nome;
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
     public void aumentarQuantidade(double valor){
         quantidadeEmEstoque += valor;
     }

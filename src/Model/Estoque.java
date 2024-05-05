@@ -55,8 +55,20 @@ public class Estoque implements IOperarEstoque, IOperarLista {
 
     //IOperarEstoque====================================================================================================
 
+
+    public boolean abrirEstoque() {
+        this.estadoEstoque = true;
+        System.out.println("Estoque aberto");
+        return true;
+    }
+
+    public boolean fecharEstoque() {
+        this.estadoEstoque = false;
+        System.out.println("Estoque fechado");
+        return false;
+    }
+
     public void pesquisar(String nome){
-        Produto produtoPesquisado = null;
         if (estadoEstoque) {
             for (Produto produto : listaDeProdutos) {
                 if (produto.getNome().equalsIgnoreCase(nome)) {
@@ -70,7 +82,7 @@ public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
-    public void acrescentarProduto(int quantidade){
+    public void acrescentarProduto(Produto produto, int quantidade){
         if (estadoEstoque) {
 
         }else {
@@ -78,24 +90,19 @@ public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
-    public void retirarProduto(int quantidade){
+    public void retirarProduto(Produto produto, int quantidade){
         if (estadoEstoque) {
+            if (quantidade <= produto.quantidadeEmEstoque) {
+                produto.quantidadeEmEstoque -= quantidade;
+                System.out.println("Quantidade retirada do estoque: " + quantidade);
+            } else {
+                System.out.println("Quantidade insuficiente em estoque");
+            }
         }else {
             System.out.print("Estoque está fechado");
         }
     }
 
-    public boolean abrirEstoque() {
-        this.estadoEstoque = true;
-        System.out.println("Estoque aberto");
-        return true;
-    }
-
-    public boolean fecharEstoque() {
-        this.estadoEstoque = false;
-        System.out.println("Estoque fechado");
-        return false;
-    }
 
     //==================================================================================================================
 
