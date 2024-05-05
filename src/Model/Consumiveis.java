@@ -7,8 +7,8 @@ public class Consumiveis extends Produto {
     public EnumUtilidade utilidade;
     public EnumMedida medida;
 
-    Consumiveis(int codigoProduto, String nome, double preco, int quantidadeEmEstoque, double quantidade, EnumUtilidade utilidade, EnumMedida medida){
-        super(codigoProduto, nome, preco, quantidadeEmEstoque);
+    Consumiveis(String nome, double preco, int quantidadeEmEstoque, double quantidade, EnumUtilidade utilidade, EnumMedida medida){
+        super(nome, preco, quantidadeEmEstoque);
         this.quantidade = quantidade;
         this.utilidade = utilidade;
         this.medida = medida;
@@ -16,9 +16,12 @@ public class Consumiveis extends Produto {
 
     @Override
     public String toString() {
-        return "Consumiveis{" +
-                "utilidade=" + utilidade +
-                ", medida=" + medida +
-                '}';
+        return "Consumiveis" + '\'' +
+                "Nome= " + nome + '\'' +
+                "Preço= " + preco + '\'' +
+                "Medida= " + medida + '\'' +
+                "Utilidade= " + utilidade + '\'' +
+                "Quantidade= " + quantidade + '\'' +
+                "Quantidade em Estoque= " + quantidadeEmEstoque;
     }
 }

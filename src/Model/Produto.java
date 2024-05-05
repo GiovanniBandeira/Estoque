@@ -1,13 +1,13 @@
 package Model;
 
+import Contrato.IOperarLista;
+
 abstract public class Produto {
-    public int codigoProduto;
     public String nome;
     public double preco;
     public int quantidadeEmEstoque;
 
-    Produto(int codigoProduto, String nome, double preco, int quantidadeEmEstoque){
-        this.codigoProduto = codigoProduto;
+    public Produto(String nome, double preco, int quantidadeEmEstoque){
         this.nome = nome;
         this.preco = preco;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
@@ -25,13 +25,15 @@ abstract public class Produto {
         }
     }
 
+    public String getNome(){
+        return nome;
+    }
+
     @Override
     public String toString() {
-        return "Produto{" +
-                "codigoProduto=" + codigoProduto +
-                ", nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", quantidadeEmEstoque=" + quantidadeEmEstoque +
-                '}';
+        return "Produto" + '\n' +
+                "Nome⭢ '" + nome + '\n' +
+                "Valor⭢ " + "R$" + preco + '\n' +
+                "Quantidade em estoque⭢ " + quantidadeEmEstoque + '\n';
     }
 }

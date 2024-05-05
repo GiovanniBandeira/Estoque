@@ -8,9 +8,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Estoque estoque = new Estoque();
 
-        Produto bronze = new Produto(001, "Bronze", 150, 1000){};
+        //Criações para testes
+        Estoque estoque = new Estoque();
+        Produto bronze = new Produto( "Bronze", 150, 8000){};
+        Produto aco = new Produto( "aço", 300,562){};
+
+
+        estoque.listarProdutos();
+        estoque.criarProduto(bronze);
+        estoque.listarProdutos();
+
+
+        estoque.abrirEstoque();
+        estoque.criarProduto(bronze);
+        estoque.listarProdutos();
+        estoque.criarProduto(aco);
+        estoque.listarProdutos();
+        estoque.pesquisar("aluminio");
+        estoque.pesquisar("Bronze");
+
+        //==============================================================================================================
 
         Scanner scanner = new Scanner(System.in);
         int selecaoMenu;
@@ -44,9 +62,14 @@ public class Main {
                                 estoque.fecharEstoque();
                                 break;
                             case 3:
+                                estoque.listarProdutos();
                                 break;
                             case 4:
+                                String nome = scanner.next();
+                                estoque.pesquisar(nome);
                                 break;
+                            default:
+                                System.out.println("Seleçaõ inválida");
                         }
                     }
                     while (selecaoEstoque != 5);
@@ -54,10 +77,12 @@ public class Main {
                 case 2:
                     int selecaoProduto;
                     do {
-                        System.out.print("   Estoque   \n");
+                        System.out.print("   Produtos   \n");
                         System.out.print("1 - Listar pordutos\n");
                         System.out.print("2 - Procurar porduto\n");
-                        System.out.print("3 - Sair\n");
+                        System.out.print("3 - \n");
+                        System.out.print("4 - \n");
+                        System.out.print("5 - Sair\n");
                         System.out.print("⭢");
                         selecaoProduto = scanner.nextInt();
 
@@ -66,21 +91,25 @@ public class Main {
                                 estoque.listarProdutos();
                                 break;
                             case 2:
-                                estoque.pesquisar("Bronze");
+                                String nome = scanner.next();
+                                estoque.pesquisar(nome);
                                 break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            default:
+                                System.out.println("Seleçaõ inválida");
                         }
                     }
                     while (selecaoProduto != 3);
                     break;
-                        case 3:
-                            break;
-                        default:
-                            System.out.println("Seleçaõ inválida");
-                    }
-                }
-                while (selecaoMenu != 3);
-
-
-
+                case 3:
+                    break;
+                default:
+                    System.out.println("Seleçaõ inválida");
+            }
+        }
+        while (selecaoMenu != 3);
     }
 }
