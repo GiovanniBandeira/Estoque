@@ -2,7 +2,7 @@ package Model;
 
 import Contrato.*;
 
-public class Estoque implements IEstadoDoEstoque, IListarProdutos, IPesquisa {
+public class Estoque implements IOperarEstoque {
     public Produto[] listaDeProdutos;
     public double tamanho;
     public boolean estadoEstoque = false;
@@ -14,26 +14,25 @@ public class Estoque implements IEstadoDoEstoque, IListarProdutos, IPesquisa {
         this.tamanho = 0;
     }
 
-    public void listarProdutos(){
-        if (estadoEstoque){
-            for (int i = 0 ;i < this.listaDeProdutos.length; i++) {
-                System.out.println(this.listaDeProdutos[i]);
-            }
-        } else {
-            System.out.println("Estoque está fechado");
-        }
-    }
+
 
     public String pesquisar(String nome){
-        String nomeProduto;
-        if (estadoEstoque) {
+         if (estadoEstoque) {
             for (int i = 0; i < listaDeProdutos.length; i++) {
                 if (nome.equals(listaDeProdutos[i].nome)){
-                    Produto listaDeProduto = listaDeProdutos[i];
+                    nome = String.format(listaDeProdutos[i].toString());
                 }
             }
         }
-        return "";
+        return nome;
+    }
+
+    public int adicionarProduto(int quantidade){
+        int num;
+        if (estadoEstoque) {
+
+        }
+        return num;
     }
 
     public boolean abrirEstoque() {

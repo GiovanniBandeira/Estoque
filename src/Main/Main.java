@@ -10,6 +10,8 @@ public class Main {
 
         Estoque estoque = new Estoque();
 
+        Produto bronze = new Produto(001, "Bronze", 150, 1000){};
+
         Scanner scanner = new Scanner(System.in);
         int selecaoMenu;
 
@@ -44,6 +46,7 @@ public class Main {
                             case 3:
                                 break;
                             case 4:
+                                estoque.pesquisar("Bronze");
                                 break;
                         }
                     }
