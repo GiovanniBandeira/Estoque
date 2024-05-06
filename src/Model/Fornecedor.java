@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 import Model.*;
 
 public class Fornecedor extends Empresa{
@@ -22,7 +24,13 @@ public class Fornecedor extends Empresa{
 
     public void comprarProduto(String nome, double preco, int quantidade){
         if (Estoque.estadoEstoque){
-            criarProduto(nome, preco, quantidade);
+            Produto produto = new Produto(nome, preco, quantidade){};
+            if (Estoque.listaDeProdutos == null) {
+                Estoque.listaDeProdutos = new ArrayList<>();
+            }
+            Estoque.listaDeProdutos.add(produto);
+            System.out.println("Produto criado com sucesso!");
+            System.out.println(produto);
         } else {
             System.out.println("Estoque está fechado");
             
