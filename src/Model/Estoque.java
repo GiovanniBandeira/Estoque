@@ -82,21 +82,37 @@ public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
-    public void acrescentarProduto(Produto produto, int quantidade){
+    public void acrescentarProduto(Produto nome, int quantidade){
         if (estadoEstoque) {
-
-        }else {
+            for (Produto produto : listaDeProdutos){
+                if (nome.getNome().equals(nome.getNome())) {
+                    nome.quantidadeEmEstoque += quantidade;
+                    System.out.println("Quantidade inserida no estoque: " + quantidade);
+                    break;  
+                } else {
+                    System.out.println("Produto não encontrado");
+                }
+            }
+        } else {
             System.out.print("Estoque está fechado");
         }
     }
 
-    public void retirarProduto(Produto produto, int quantidade){
+    public void retirarProduto(String nome, int quantidade){
         if (estadoEstoque) {
-            if (quantidade <= produto.quantidadeEmEstoque) {
-                produto.quantidadeEmEstoque -= quantidade;
-                System.out.println("Quantidade retirada do estoque: " + quantidade);
-            } else {
-                System.out.println("Quantidade insuficiente em estoque");
+            for (Produto produto : listaDeProdutos){
+                if (produto.getNome().equalsIgnoreCase(nome)) {
+                    if (quantidade <= produto.quantidadeEmEstoque) {
+                        produto.quantidadeEmEstoque -= quantidade;
+                        System.out.println("Quantidade retirada do estoque: " + quantidade);
+                        break;
+                    } else {
+                        System.out.println("Quantidade insuficiente em estoque");
+                        break;
+                    }
+                } else {
+                    System.out.println("Produto não encontrado");
+                }
             }
         }else {
             System.out.print("Estoque está fechado");

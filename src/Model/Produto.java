@@ -1,7 +1,5 @@
 package Model;
 
-import Contrato.IOperarLista;
-
 abstract public class Produto {
     public String nome;
     public double preco;

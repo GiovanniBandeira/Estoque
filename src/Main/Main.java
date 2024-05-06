@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 public class Main {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
 
@@ -86,12 +89,12 @@ public class Main {
                                 break;
 
                             case 6:
-                                System.out.println("Nome do produta para retirada");
-                                String nomeProduto = scanner.next();
+                                System.out.println("Nome do produta para retirada: ");
+                                String nomeProd = scanner.next();
                                 System.out.println("Quatidade: ");
                                 int quatidade = scanner.nextInt();
 
-                                estoque.retirarProduto(nomeProduto, quatidade);
+                                estoque.retirarProduto(nomeProd, quatidade);
                                 break;
 
                             default:
