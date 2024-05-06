@@ -18,21 +18,25 @@ public class Cliente extends Pessoa{
                 if (produto.getNome().equals(produto.getNome())){
                     if (quantidade <= produto.quantidadeEmEstoque) {
                         if (produto.getPreco() <= valor){
+                            produto.quantidadeEmEstoque -= quantidade;
                             System.out.println("Venda realizada com sucesso!");
                             break;
                         }else {
-                            System.out.println("Você colocou valor menor do necessario!");
+                            System.out.println("Você colocou valor menor do necessario!\n");
+                            break;
                         }
                     }else {
-                        System.out.println("Quantidade insuficiente em estoque");
+                        System.out.println("Quantidade insuficiente em estoque\n");
+                        break;
                     }
 
                 } else {
-                    System.out.println("Produto não encontrado");
+                    System.out.println("Produto não encontrado\n");
+                    break;
                 }
             }
         } else {
-            System.out.println("Estoque está fechado");
+            System.out.println("Estoque está fechado\n");
         }
     }
 }

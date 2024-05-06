@@ -33,9 +33,9 @@ public class Main {
         Estoque.listaDeProdutos.add(materia_Prima3);
 
 
-        Produto consumivel1 = new Consumivel("Oléo", 14, 3, 2.5, EnumMedida.L);
+        Produto consumivel1 = new Consumivel("Óleo", 14, 3, 2.5, EnumMedida.L);
         Produto consumivel2 = new Consumivel("eletrodo", 3.50, 4, 5, EnumMedida.g);
-        Produto consumivel3 = new Consumivel("Oléo", 12, 1, 3, EnumMedida.L);
+        Produto consumivel3 = new Consumivel("Óleo", 12, 1, 3, EnumMedida.L);
         Estoque.listaDeProdutos.add(consumivel1);
         Estoque.listaDeProdutos.add(consumivel2);
         Estoque.listaDeProdutos.add(consumivel3);
@@ -139,53 +139,26 @@ public class Main {
                                 break;
 
                             case 3:
-                                int selecaoDosProdutos;
-                                do {
-                                    System.out.print("   Produtos   \n");
-                                    System.out.print("1 - Materia prima\n");
-                                    System.out.print("2 - Mercadoria\n");
-                                    System.out.print("3 - Consumíveis\n");
-                                    switch (selecaoDosProdutos) {
-
-                                        case 1:
-                                            break;
-                                        
-                                        case 2:
-                                            break;
-
-                                        case 3:
-                                            break;
-                                    
-                                        default:
-                                            System.out.println("Seleçaõ inválida");
-                                    }
-                                    while (selecaoDosProdutos != 3) {
-                                        break;
-                                        
-                                    }
-                                    System.out.print("Digite o nome do produto: ");
-                                    String nome1 = scanner1.next();
-                                    System.out.print("Digite o nome do produto: ");
-                                    double preco = scanner1.nextDouble();
-                                    System.out.print("Digite o nome do produto: ");
-                                    int quantidade = scanner1.nextInt();
-                                    System.out.println();
-
-                                    estoque.criarProduto(nome1, preco, quantidade);
-                                }   
+                                System.out.print("Digite o nome do produto: ");
+                                String nome1 = scanner1.next();
+                                System.out.print("Digite o preço do produto: ");
+                                double preco = scanner1.nextDouble();
+                                System.out.print("Digite a quantidade do produto: ");
+                                int quantidade = scanner1.nextInt();
+                                estoque.criarProduto(nome1, preco, quantidade);
                                 break;
 
                             case 4:
+                                System.out.print("Digite o nome do produto que deseja excluir: ");
+                                String nome2 = scanner1.next();
+                                estoque.excluirProduto(nome2);
                                 break;
 
                             default:
                                 System.out.println("Seleçaõ inválida");
                         }
                     }
-                    while (selecaoProduto != 3);
-                    break;
-
-                case 3:
+                    while (selecaoProduto != 5);
                     break;
 
                 default:

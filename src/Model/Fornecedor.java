@@ -32,7 +32,7 @@ abstract public class Fornecedor extends Empresa implements IOperarCompras{
             System.out.println("Produto criado com sucesso!");
             System.out.println(produto);
         } else {
-            System.out.println("Estoque está fechado");
+            System.out.println("Estoque está fechado\n");
             
         }
     }

@@ -17,7 +17,7 @@ public class Materia_Prima extends Produto {
     @Override
     public String toString() {
         return "Materia_Prima" + '\n' +
-                "Nome= " + nome + " " + material + " " + forma + " " + diametro + '\n' +
+                "Nome= " + nome + " " + material + " " + forma + " " + diametro + "mm" + '\n' +
                 "Preco= " + preco + '\n' +
                 "Quantidade em estoque= " + quantidadeEmEstoque + "\n";
     }

@@ -24,6 +24,8 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
                 for (Produto listaDeProduto : listaDeProdutos) {
                     System.out.println(listaDeProduto);
                 }
+            } else {
+                System.out.println("Lista de produtos vazia\n");
             }
         }else {
             System.out.print("Estoque está fechado");
@@ -76,12 +78,11 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
             for (Produto produto : listaDeProdutos) {
                 if (produto.getNome().equalsIgnoreCase(nome)) {
                     System.out.println(produto);
-                    return;
                 }
             }
             System.out.print("Produto não encontrado");
         } else {
-            System.out.print("Estoque está fechado");
+            System.out.print("Estoque está fechado\n");
         }
     }
 
@@ -97,7 +98,7 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
                 }
             }
         } else {
-            System.out.print("Estoque está fechado");
+            System.out.print("Estoque está fechado\n");
         }
     }
 
@@ -118,7 +119,7 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
                 }
             }
         }else {
-            System.out.print("Estoque está fechado");
+            System.out.print("Estoque está fechado\n");
         }
     }
 
@@ -131,7 +132,7 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
         if (estadoEstoque) {
             estoqueEstado = "Estoque aberto";
         } else {
-            estoqueEstado = "Estoque fechado";
+            estoqueEstado = "Estoque fechado\n";
         }
         return estoqueEstado;
     }
