@@ -27,4 +27,4 @@ Recursos planejados:
 
 ⬇Abaixo estara o diagrama do Projeto⬇
 
-![alt text](https://github.com/GiovanniBandeira/Estoque/blob/1998c7ae668fef63f6647a9b136dd47724974179/assets/Avaliacao.drawio.png)
+![alt text](https://github.com/GiovanniBandeira/Estoque/blob/4db9aee99bbc3c4222a464da3855321e577992c2/assets/Avaliacao.drawio.png)
