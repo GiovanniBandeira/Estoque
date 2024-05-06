@@ -19,6 +19,6 @@ public class Materia_Prima extends Produto {
         return "Materia_Prima" + '\n' +
                 "Nome= " + nome + " " + material + " " + forma + " " + diametro + '\n' +
                 "Preco= " + preco + '\n' +
-                "Quantidade em estoque= " + quantidadeEmEstoque;
+                "Quantidade em estoque= " + quantidadeEmEstoque + "\n";
     }
 }

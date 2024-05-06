@@ -14,10 +14,10 @@ public class Consumivel extends Produto {
 
    @Override
    public String toString() {
-      return "Consumiveis" +
-      "Nome= " + nome +
-      "Quantidade= " + quantidade + medida +
-      "Preço= " + preco +
-      "Quantidade em estoque= " + quantidadeEmEstoque + "Medida= " + medida;
+      return "Consumiveis" + "\n" +
+      "Nome= " + nome + "\n" +
+      "Quantidade= " + quantidade + medida + "\n" +
+      "Preço= " + preco + "\n" +
+      "Quantidade em estoque= " + quantidadeEmEstoque + "\n";
    }      
 }

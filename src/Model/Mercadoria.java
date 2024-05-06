@@ -17,6 +17,6 @@ public class Mercadoria extends Produto{
         return "Mercadoria" + '\n' +
                 "Produto= " + mercadorias + " " + nome + + diametro + '\n' +
                 "Preço= " + preco + '\n' +
-                "Quantidade em estoque= " + quantidadeEmEstoque;
+                "Quantidade em estoque= " + quantidadeEmEstoque + "\n";
     }
 }

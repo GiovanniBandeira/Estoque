@@ -1,11 +1,11 @@
 package Enum;
 
 public enum EnumForma {
-    REDONDO("Redondo"),
-    QUADRADO("Quadrado"),
-    TUBO("Tubo"),
-    CHAPA("Chapa"),
-    SEXTAVADA("Sextavada");
+    Redondo("Redondo"),
+    Quadrado("Quadrado"),
+    Tubo("Tubo"),
+    Chapa("Chapa"),
+    Sextavada("Sextavada");
 
     String formato;
 

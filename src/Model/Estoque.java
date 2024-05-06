@@ -5,7 +5,7 @@ import Contrato.*;
 import java.util.ArrayList;
 
 abstract public class Estoque implements IOperarEstoque, IOperarLista {
-    public static ArrayList<Produto> listaDeProdutos;
+    public static ArrayList<Produto> listaDeProdutos = new ArrayList<>();
     public static boolean estadoEstoque = false;
 
     public Estoque(){}

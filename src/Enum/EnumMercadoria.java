@@ -1,8 +1,8 @@
 package Enum;
 
 public enum EnumMercadoria {
-    RETENTOR("Retentor"),
-    ROLAMENTO("Rolamento");
+    Retentor("Retentor"),
+    Rolamento("Rolamento");
 
     String mercadoria;
 

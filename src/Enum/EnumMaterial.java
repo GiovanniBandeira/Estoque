@@ -1,10 +1,10 @@
 package Enum;
 
 public enum EnumMaterial {
-    BRONZE("Bronze"),
-    ALUMINIO("Aluminio"),
-    FERRO("Ferro"),
-    COBRE("Cobre");
+    Bronze("Bronze"),
+    Aluminio("Aluminio"),
+    Ferro("Ferro"),
+    Cobre("Cobre");
 
     String material;
 
