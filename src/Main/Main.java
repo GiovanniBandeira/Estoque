@@ -4,6 +4,11 @@ import Model.*;
 
 import java.util.Scanner;
 
+import Enum.EnumForma;
+import Enum.EnumMaterial;
+import Enum.EnumMedida;
+import Enum.EnumMercadoria;
+
 public class Main {
 
     /**
@@ -11,29 +16,31 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        Estoque estoque = new Estoque(){};
+        Scanner scanner = new Scanner(System.in);
 
         //Criações para testes
-        Estoque estoque = new Estoque();
-        Produto bronze = new Produto( "Bronze", 150, 8000){};
-        Produto aco = new Produto( "aço", 300,562){};
-
-
-        estoque.listarProdutos();
-        estoque.criarProduto(bronze);
-        estoque.listarProdutos();
-
-
+        
         estoque.abrirEstoque();
-        estoque.criarProduto(bronze);
         estoque.listarProdutos();
-        estoque.criarProduto(aco);
-        estoque.listarProdutos();
-        estoque.pesquisar("aluminio");
-        estoque.pesquisar("Bronze");
 
+        Mercadoria mercadoria1 = new Mercadoria("Sks", 40, 5, EnumMercadoria.ROLAMENTO, 20.30);
+        Mercadoria mercadoria2 = new Mercadoria("SAS", 20.50, 10, EnumMercadoria.RETENTOR, 20.30);
+
+        Materia_Prima materia_Prima1 = new Materia_Prima("Tarugo", 1.20, 4350, EnumMaterial.FERRO, EnumForma.SEXTAVADA, 50);
+        Materia_Prima materia_Prima2 = new Materia_Prima("Tarugo", 0.90, 2000, EnumMaterial.ALUMINIO, EnumForma.TUBO, 25.2);
+        Materia_Prima materia_Prima3 = new Materia_Prima("Tarugo", 1.50, 1565, EnumMaterial.BRONZE, EnumForma.REDONDO, 80.2);
+
+
+        Consumivel consumivel1 = new Consumivel("Oléo", 14, 3, 2.5, EnumMedida.LITRO_L);
+        Consumivel consumivel2 = new Consumivel("eletrodo", 3.50, 4, 5, EnumMedida.PESO_G);
+        Consumivel consumivel3 = new Consumivel("Oléo", 12, 1, 3, EnumMedida.LITRO_L);
+
+        estoque.listarProdutos();
+        
         //==============================================================================================================
 
-        Scanner scanner = new Scanner(System.in);
+        
         int selecaoMenu;
 
         do {

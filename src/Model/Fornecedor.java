@@ -1,5 +1,7 @@
 package Model;
 
+import Model.*;
+
 public class Fornecedor extends Empresa{
     
     public String endereco;
@@ -18,11 +20,11 @@ public class Fornecedor extends Empresa{
         return "Ligando para o fornecedor";
     }
 
-    public void comprarProduto(Produto produto, double preco, int quantidade){
+    public void comprarProduto(String nome, double preco, int quantidade){
         if (Estoque.estadoEstoque){
-            Estoque.criarProduto(produto, preco, quantidade);
-
+            criarProduto(nome, preco, quantidade);
         } else {
+            System.out.println("Estoque está fechado");
             
         }
     }

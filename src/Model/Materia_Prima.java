@@ -7,7 +7,7 @@ public class Materia_Prima extends Produto {
     public EnumForma forma;
     public double diametro;
 
-    Materia_Prima(String nome, double preco, int quantidadeEmEstoque, EnumMaterial material, EnumForma forma, double diametro){
+    public Materia_Prima(String nome, double preco, int quantidadeEmEstoque, EnumMaterial material, EnumForma forma, double diametro){
         super(nome, preco, quantidadeEmEstoque);
         this.material = material;
         this.forma = forma;
@@ -16,12 +16,9 @@ public class Materia_Prima extends Produto {
 
     @Override
     public String toString() {
-        return "Materia_Prima{" + '\'' +
-                "Nome= " + nome + " " +
-                material + " " +
-                forma + " " +
-                diametro + '\'' +
-                "Preco= " + preco + '\'' +
+        return "Materia_Prima" + '\n' +
+                "Nome= " + nome + " " + material + " " + forma + " " + diametro + '\n' +
+                "Preco= " + preco + '\n' +
                 "Quantidade em estoque= " + quantidadeEmEstoque;
     }
 }

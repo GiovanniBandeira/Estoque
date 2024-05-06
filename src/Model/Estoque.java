@@ -4,7 +4,7 @@ import Contrato.*;
 
 import java.util.ArrayList;
 
-public class Estoque implements IOperarEstoque, IOperarLista {
+abstract public class Estoque implements IOperarEstoque, IOperarLista {
     public static ArrayList<Produto> listaDeProdutos;
     public static boolean estadoEstoque = false;
 
@@ -58,13 +58,13 @@ public class Estoque implements IOperarEstoque, IOperarLista {
 
 
     public boolean abrirEstoque() {
-        this.estadoEstoque = true;
+        Estoque.estadoEstoque = true;
         System.out.println("Estoque aberto");
         return true;
     }
 
     public boolean fecharEstoque() {
-        this.estadoEstoque = false;
+        Estoque.estadoEstoque = false;
         System.out.println("Estoque fechado");
         return false;
     }
