@@ -14,7 +14,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Produto> listaDeProdutos = new ArrayList<>();
         Estoque estoque = new Estoque(){};
         Scanner scanner1 = new Scanner(System.in);
 
@@ -23,22 +22,22 @@ public class Main {
         estoque.abrirEstoque();
         estoque.listarProdutos();
 
-        Mercadoria mercadoria1 = new Mercadoria("Sks", 40, 5, EnumMercadoria.ROLAMENTO, 20.30);
-        Mercadoria mercadoria2 = new Mercadoria("SAS", 20.50, 10, EnumMercadoria.RETENTOR, 20.30);
+        Produto mercadoria1 = new Mercadoria("Sks", 40, 5, EnumMercadoria.ROLAMENTO, 20.30);
+        Produto mercadoria2 = new Mercadoria("SAS", 20.50, 10, EnumMercadoria.RETENTOR, 20.30);
         Estoque.listaDeProdutos.add(mercadoria1);
         Estoque.listaDeProdutos.add(mercadoria2);
 
-        Materia_Prima materia_Prima1 = new Materia_Prima("Tarugo", 1.20, 4350, EnumMaterial.FERRO, EnumForma.SEXTAVADA, 50);
-        Materia_Prima materia_Prima2 = new Materia_Prima("Tarugo", 0.90, 2000, EnumMaterial.ALUMINIO, EnumForma.TUBO, 25.2);
-        Materia_Prima materia_Prima3 = new Materia_Prima("Tarugo", 1.50, 1565, EnumMaterial.BRONZE, EnumForma.REDONDO, 80.2);
+        Produto materia_Prima1 = new Materia_Prima("Tarugo", 1.20, 4350, EnumMaterial.FERRO, EnumForma.SEXTAVADA, 50);
+        Produto materia_Prima2 = new Materia_Prima("Tarugo", 0.90, 2000, EnumMaterial.ALUMINIO, EnumForma.TUBO, 25.2);
+        Produto materia_Prima3 = new Materia_Prima("Tarugo", 1.50, 1565, EnumMaterial.BRONZE, EnumForma.REDONDO, 80.2);
         Estoque.listaDeProdutos.add(materia_Prima1);
         Estoque.listaDeProdutos.add(materia_Prima2);
         Estoque.listaDeProdutos.add(materia_Prima3);
 
 
-        Consumivel consumivel1 = new Consumivel("Oléo", 14, 3, 2.5, EnumMedida.LITRO_L);
-        Consumivel consumivel2 = new Consumivel("eletrodo", 3.50, 4, 5, EnumMedida.PESO_G);
-        Consumivel consumivel3 = new Consumivel("Oléo", 12, 1, 3, EnumMedida.LITRO_L);
+        Produto consumivel1 = new Consumivel("Oléo", 14, 3, 2.5, EnumMedida.LITRO_L);
+        Produto consumivel2 = new Consumivel("eletrodo", 3.50, 4, 5, EnumMedida.PESO_G);
+        Produto consumivel3 = new Consumivel("Oléo", 12, 1, 3, EnumMedida.LITRO_L);
         Estoque.listaDeProdutos.add(consumivel1);
         Estoque.listaDeProdutos.add(consumivel2);
         Estoque.listaDeProdutos.add(consumivel3);
