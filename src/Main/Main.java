@@ -122,7 +122,7 @@ public class Main {
                     do {
                         System.out.print("   Produtos   \n");
                         System.out.print("1 - Listar pordutos\n");
-                        System.out.print("2 - Procurar porduto\n");
+                        System.out.print("2 - Procurar produto\n");
                         System.out.print("3 - Criar produto\n");
                         System.out.print("4 - Excluir produto\n");
                         System.out.print("5 - Sair\n");
@@ -135,11 +135,13 @@ public class Main {
                                 break;
 
                             case 2:
+                                System.out.println("Pesquise: ");
                                 String nome = scanner1.next();
                                 estoque.pesquisar(nome);
                                 break;
 
                             case 3:
+
                                 break;
 
                             case 4:
