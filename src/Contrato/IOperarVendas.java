@@ -1,11 +1,8 @@
 package Contrato;
 
-import Model.ControleEstoque.Produto;
-import Model.ControleTransacao.Cliente;
+import Model.Produto;
 
 public interface IOperarVendas {
 
-    void vender(Produto produto);
-
-    void associarVenda(Cliente cliente, Produto produto);
+    void vender(Produto produto, int quantidade, double valor);
 }

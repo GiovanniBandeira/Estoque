@@ -1,8 +1,6 @@
 package Main;
 
 import Model.*;
-import Model.ControleEstoque.Estoque;
-import Model.ControleEstoque.Produto;
 
 import java.util.Scanner;
 

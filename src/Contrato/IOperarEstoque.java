@@ -1,6 +1,6 @@
 package Contrato;
 
-import Model.ControleEstoque.Produto;
+import Model.Produto;
 
 public interface IOperarEstoque {
 

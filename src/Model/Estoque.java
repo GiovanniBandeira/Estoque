@@ -1,18 +1,18 @@
-package Model.ControleEstoque;
+package Model;
 
 import Contrato.*;
 
 import java.util.ArrayList;
 
 public class Estoque implements IOperarEstoque, IOperarLista {
-    public ArrayList<Produto> listaDeProdutos;
-    public boolean estadoEstoque = false;
+    public static ArrayList<Produto> listaDeProdutos;
+    public static boolean estadoEstoque = false;
 
     public Estoque(){}
 
     public Estoque(ArrayList<Produto> listaDeProdutos, boolean estadoEstoque) {
-        this.listaDeProdutos = new ArrayList<>();
-        this.estadoEstoque = estadoEstoque;
+        Estoque.listaDeProdutos = new ArrayList<>();
+        Estoque.estadoEstoque = estadoEstoque;
     }
 
     //IOperarLista====================================================================================================
@@ -30,7 +30,7 @@ public class Estoque implements IOperarEstoque, IOperarLista {
 
     public void criarProduto(String nome, double preco, int quantidade){
         if (estadoEstoque) {
-            Produto produtoNovo = new Produto(nome, preco, quantidade);
+            Produto produtoNovo = new Produto(nome, preco, quantidade){};
             if (listaDeProdutos == null) {
                 listaDeProdutos = new ArrayList<>();
             }
@@ -47,7 +47,7 @@ public class Estoque implements IOperarEstoque, IOperarLista {
             if (listaDeProdutos == null) {
                 listaDeProdutos = new ArrayList<>();
             }
-            listaDeProdutos.remove(produto);
+            listaDeProdutos.remove(nome);
             System.out.println("Produto removido com sucesso!");
         } else {
             System.out.println("Estoque está fechado");

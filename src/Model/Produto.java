@@ -1,13 +1,13 @@
-package Model.ControleEstoque;
+package Model;
 
-import Enum.EnumMedida;
-import Enum.EnumUtilidade;
+import Enum.*;
 
 abstract public class Produto {
     public String nome;
     public double preco;
     public int quantidadeEmEstoque;
 
+    //==============================================================================================================
     public Produto(String nome, double preco, int quantidadeEmEstoque){
         this.nome = nome;
         this.preco = preco;
@@ -22,6 +22,12 @@ abstract public class Produto {
     public String getNome(){
         return nome;
     }
+
+    public double getPreco(){
+        return preco;
+    }
+
+    //==============================================================================================================
 
     @Override
     public String toString() {
