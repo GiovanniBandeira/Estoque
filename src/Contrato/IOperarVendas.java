@@ -1,7 +1,7 @@
 package Contrato;
 
-import Model.Cliente;
-import Model.Produto;
+import Model.ControleEstoque.Produto;
+import Model.ControleTransacao.Cliente;
 
 public interface IOperarVendas {
 

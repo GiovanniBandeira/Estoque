@@ -1,12 +1,10 @@
 package Contrato;
 
-import Model.Produto;
-
 public interface IOperarLista {
 
     void listarProdutos();
 
-    void criarProduto(Produto novoProduto);
+    void criarProduto(String nome, double preco, int quantidade);
 
-    void excluirProduto(Produto produtoRetirado);
+    void excluirProduto(String nome);
 }

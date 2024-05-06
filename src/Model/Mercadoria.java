@@ -1,6 +1,7 @@
 package Model;
 
 import Enum.*;
+import Model.ControleEstoque.Produto;
 
 public class Mercadoria extends Produto{
     public EnumMercadoria mercadorias;

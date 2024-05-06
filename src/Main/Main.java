@@ -1,6 +1,8 @@
 package Main;
 
 import Model.*;
+import Model.ControleEstoque.Estoque;
+import Model.ControleEstoque.Produto;
 
 import java.util.Scanner;
 
@@ -110,8 +112,8 @@ public class Main {
                         System.out.print("   Produtos   \n");
                         System.out.print("1 - Listar pordutos\n");
                         System.out.print("2 - Procurar porduto\n");
-                        System.out.print("3 - \n");
-                        System.out.print("4 - \n");
+                        System.out.print("3 - Criar produto\n");
+                        System.out.print("4 - Excluir produto\n");
                         System.out.print("5 - Sair\n");
                         System.out.print("⭢");
                         selecaoProduto = scanner.nextInt();

@@ -1,4 +1,4 @@
-package Model;
+package Model.ControleEstoque;
 
 import Contrato.*;
 
@@ -28,20 +28,21 @@ public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
-    public void criarProduto(Produto produto){
+    public void criarProduto(String nome, double preco, int quantidade){
         if (estadoEstoque) {
+            Produto produtoNovo = new Produto(nome, preco, quantidade);
             if (listaDeProdutos == null) {
                 listaDeProdutos = new ArrayList<>();
             }
-            listaDeProdutos.add(produto);
+            listaDeProdutos.add(produtoNovo);
             System.out.println("Produto criado com sucesso!");
-            System.out.println(produto);
+            System.out.println(produtoNovo);
         } else {
             System.out.println("Estoque está fechado");
         }
     }
 
-    public void excluirProduto(Produto produto){
+    public void excluirProduto(String nome){
         if (estadoEstoque) {
             if (listaDeProdutos == null) {
                 listaDeProdutos = new ArrayList<>();
