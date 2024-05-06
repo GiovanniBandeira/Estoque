@@ -2,6 +2,7 @@ package Main;
 
 import Model.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Enum.EnumForma;
@@ -11,13 +12,11 @@ import Enum.EnumMercadoria;
 
 public class Main {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
+        ArrayList<Produto> listaDeProdutos = new ArrayList<>();
         Estoque estoque = new Estoque(){};
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
 
         //Criações para testes
         
@@ -26,15 +25,23 @@ public class Main {
 
         Mercadoria mercadoria1 = new Mercadoria("Sks", 40, 5, EnumMercadoria.ROLAMENTO, 20.30);
         Mercadoria mercadoria2 = new Mercadoria("SAS", 20.50, 10, EnumMercadoria.RETENTOR, 20.30);
+        Estoque.listaDeProdutos.add(mercadoria1);
+        Estoque.listaDeProdutos.add(mercadoria2);
 
         Materia_Prima materia_Prima1 = new Materia_Prima("Tarugo", 1.20, 4350, EnumMaterial.FERRO, EnumForma.SEXTAVADA, 50);
         Materia_Prima materia_Prima2 = new Materia_Prima("Tarugo", 0.90, 2000, EnumMaterial.ALUMINIO, EnumForma.TUBO, 25.2);
         Materia_Prima materia_Prima3 = new Materia_Prima("Tarugo", 1.50, 1565, EnumMaterial.BRONZE, EnumForma.REDONDO, 80.2);
+        Estoque.listaDeProdutos.add(materia_Prima1);
+        Estoque.listaDeProdutos.add(materia_Prima2);
+        Estoque.listaDeProdutos.add(materia_Prima3);
 
 
         Consumivel consumivel1 = new Consumivel("Oléo", 14, 3, 2.5, EnumMedida.LITRO_L);
         Consumivel consumivel2 = new Consumivel("eletrodo", 3.50, 4, 5, EnumMedida.PESO_G);
         Consumivel consumivel3 = new Consumivel("Oléo", 12, 1, 3, EnumMedida.LITRO_L);
+        Estoque.listaDeProdutos.add(consumivel1);
+        Estoque.listaDeProdutos.add(consumivel2);
+        Estoque.listaDeProdutos.add(consumivel3);
 
         estoque.listarProdutos();
         
@@ -49,7 +56,7 @@ public class Main {
             System.out.print("2 - Produtos\n");
             System.out.print("3 - Sair\n");
             System.out.print("⭢");
-            selecaoMenu = scanner.nextInt();
+            selecaoMenu = scanner1.nextInt();
 
             switch (selecaoMenu) {
                 case 1:
@@ -64,7 +71,7 @@ public class Main {
                         System.out.print("6 - Saída de produto\n");
                         System.out.print("7 - Sair\n");
                         System.out.print("⭢");
-                        selecaoEstoque = scanner.nextInt();
+                        selecaoEstoque = scanner1.nextInt();
 
                         switch (selecaoEstoque){
                             case 1:
@@ -81,15 +88,15 @@ public class Main {
 
                             case 4:
                                 System.out.println("Pesquise: ");
-                                String nome = scanner.next();
+                                String nome = scanner1.next();
                                 estoque.pesquisar(nome);
                                 break;
 
                             case 5:
                                 System.out.println("Produto: ");
-                                String nomeProduto = scanner.next();
+                                String nomeProduto = scanner1.next();
                                 System.out.println("Quatidade: ");
-                                int quatidadeProduto = scanner.nextInt();
+                                int quatidadeProduto = scanner1.nextInt();
                                 Produto novoProduto = new Produto(nomeProduto, quatidadeProduto) {
                                 };
                                 estoque.acrescentarProduto(novoProduto, quatidadeProduto);
@@ -97,9 +104,9 @@ public class Main {
 
                             case 6:
                                 System.out.println("Nome do produta para retirada: ");
-                                String nomeProd = scanner.next();
+                                String nomeProd = scanner1.next();
                                 System.out.println("Quatidade: ");
-                                int quatidade = scanner.nextInt();
+                                int quatidade = scanner1.nextInt();
 
                                 estoque.retirarProduto(nomeProd, quatidade);
                                 break;
@@ -121,7 +128,7 @@ public class Main {
                         System.out.print("4 - Excluir produto\n");
                         System.out.print("5 - Sair\n");
                         System.out.print("⭢");
-                        selecaoProduto = scanner.nextInt();
+                        selecaoProduto = scanner1.nextInt();
 
                         switch (selecaoProduto) {
                             case 1:
@@ -129,7 +136,7 @@ public class Main {
                                 break;
 
                             case 2:
-                                String nome = scanner.next();
+                                String nome = scanner1.next();
                                 estoque.pesquisar(nome);
                                 break;
 

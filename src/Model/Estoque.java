@@ -20,8 +20,10 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
     public void listarProdutos(){
         if (estadoEstoque) {
             System.out.println("Lista de Produtos:");
-            for (Produto listaDeProduto : listaDeProdutos) {
-                System.out.println(listaDeProduto);
+            if (listaDeProdutos != null) {
+                for (Produto listaDeProduto : listaDeProdutos) {
+                    System.out.println(listaDeProduto);
+                }
             }
         }else {
             System.out.print("Estoque está fechado");

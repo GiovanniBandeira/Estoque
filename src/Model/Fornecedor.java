@@ -2,9 +2,9 @@ package Model;
 
 import java.util.ArrayList;
 
-import Model.*;
+import Contrato.IOperarCompras;
 
-public class Fornecedor extends Empresa{
+abstract public class Fornecedor extends Empresa implements IOperarCompras{
     
     public String endereco;
     public String email;
