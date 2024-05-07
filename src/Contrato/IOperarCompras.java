@@ -1,10 +1,8 @@
 package Contrato;
 
-import Model.Produto;
-
 public interface IOperarCompras {
 
-    void comprarProduto(Produto produto, double preco, int quantidade);
+    void comprarProduto(String nome, double preco, int quantidade);
 
     String ligarParaFornecedor();
 }

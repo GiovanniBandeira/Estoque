@@ -4,13 +4,12 @@ import java.util.ArrayList;
 
 import Contrato.IOperarCompras;
 
-abstract public class Fornecedor extends Empresa implements IOperarCompras{
+public class Fornecedor extends Empresa implements IOperarCompras{
     
     public String endereco;
     public String email;
     public String contato;
-
-
+    
     public Fornecedor(String endereco, String email, String contato, String cnpj, String nome, Data dataCriacao) {
         super(cnpj, nome, dataCriacao);
         this.endereco = endereco;

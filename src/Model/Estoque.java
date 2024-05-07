@@ -17,6 +17,7 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
 
     //IOperarLista====================================================================================================
 
+    @Override
     public void listarProdutos(){
         if (estadoEstoque) {
             System.out.println("Lista de Produtos:");
@@ -32,6 +33,7 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
+    @Override
     public void criarProduto(String nome, double preco, int quantidade){
         if (estadoEstoque) {
             Produto produtoNovo = new Produto(nome, preco, quantidade){};
@@ -46,13 +48,19 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
+    @Override
     public void excluirProduto(String nome){
         if (estadoEstoque) {
             if (listaDeProdutos == null) {
                 listaDeProdutos = new ArrayList<>();
             }
-            listaDeProdutos.remove(nome);
-            System.out.println("Produto removido com sucesso!");
+            for (Produto produto : listaDeProdutos) {
+                if (produto.getNome().equalsIgnoreCase(nome)) {
+                    System.out.println(produto);
+                    listaDeProdutos.remove(produto);
+                    System.out.println("Produto removido com sucesso!");
+                }
+            }
         } else {
             System.out.println("Estoque está fechado");
         }
@@ -60,19 +68,21 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
 
     //IOperarEstoque====================================================================================================
 
-
+    @Override
     public boolean abrirEstoque() {
         Estoque.estadoEstoque = true;
         System.out.println("Estoque aberto");
         return true;
     }
 
+    @Override
     public boolean fecharEstoque() {
         Estoque.estadoEstoque = false;
         System.out.println("Estoque fechado");
         return false;
     }
 
+    @Override
     public void pesquisar(String nome){
         if (estadoEstoque) {
             for (Produto produto : listaDeProdutos) {
@@ -86,11 +96,13 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
+    @Override
     public void acrescentarProduto(Produto nome, int quantidade){
         if (estadoEstoque) {
             for (Produto produto : listaDeProdutos){
                 if (nome.getNome().equals(nome.getNome())) {
                     nome.quantidadeEmEstoque += quantidade;
+                    System.out.println("Produto: " + produto);
                     System.out.println("Quantidade inserida no estoque: " + quantidade);
                     break;  
                 } else {
@@ -102,6 +114,7 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
         }
     }
 
+    @Override
     public void retirarProduto(String nome, int quantidade){
         if (estadoEstoque) {
             for (Produto produto : listaDeProdutos){

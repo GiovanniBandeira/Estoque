@@ -10,9 +10,7 @@ public class Data {
     public EnumMes mes;
     public int ano;
 
-    
-
-    Data(int dia, EnumMes mes, int ano){
+    public Data(int dia, EnumMes mes, int ano){
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;

@@ -1,6 +1,8 @@
 package Model;
 
-public class Cliente extends Pessoa{
+import Contrato.IOperarVendas;
+
+ public class Cliente extends Pessoa implements IOperarVendas{
     public String endereco;
     public String email;
     public String contato;
@@ -12,13 +14,14 @@ public class Cliente extends Pessoa{
         this.contato = contato;
     }
 
-    public void vender(Produto produto, int quantidade, double valor){
+    public void vender(String nome, double preco, int quantidade){
         if (Estoque.estadoEstoque){
-            for (Produto listaDeProduto : Estoque.listaDeProdutos) {
-                if (produto.getNome().equals(produto.getNome())){
-                    if (quantidade <= produto.quantidadeEmEstoque) {
-                        if (produto.getPreco() <= valor){
+            for (Produto produto : Estoque.listaDeProdutos) {
+                if (produto.getNome().equalsIgnoreCase(nome)){
+                    if (preco <= produto.quantidadeEmEstoque) {
+                        if (produto.getPreco() <= preco){
                             produto.quantidadeEmEstoque -= quantidade;
+                            System.out.println(produto);
                             System.out.println("Venda realizada com sucesso!");
                             break;
                         }else {
