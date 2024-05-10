@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Estoque estoque = new Estoque(){};
+        Estoque estoque = new Estoque();
 
         Cliente cliente = new Cliente("541.748.194-00", "Tiago", new Data(16,EnumMes.Novembro, 2005),"Sousa","tiagosemT@gmail.com","9 4002-8922");
         Fornecedor fornecedor = new Fornecedor("SãoPaulo", "tvaberta@sbt.com.br", "4002-8922", "12.345.678/0001-00", "SBT", new Data(19, EnumMes.Agosto, 1981));

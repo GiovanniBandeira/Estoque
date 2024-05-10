@@ -15,7 +15,7 @@ public class Mercadoria extends Produto{
     @Override
     public String toString() {
         return "Mercadoria" + '\n' +
-                "Produto= " + mercadorias + " " + nome + + diametro + '\n' +
+                "Produto= " + mercadorias + " " + nome + "" + diametro + '\n' +
                 "Preço= " + preco + '\n' +
                 "Quantidade em estoque= " + quantidadeEmEstoque + "\n";
     }

@@ -4,15 +4,33 @@ import Contrato.*;
 
 import java.util.ArrayList;
 
-abstract public class Estoque implements IOperarEstoque, IOperarLista {
+public class Estoque implements IOperarEstoque, IOperarLista {
     public static ArrayList<Produto> listaDeProdutos = new ArrayList<>();
+
+    //Erlom
+    Produto[] prod;
     public static boolean estadoEstoque = false;
+    //==========
+    
 
     public Estoque(){}
+    
+    public Estoque(int tamanho){
+        this.prod = new Produto[tamanho];
+    }
 
     public Estoque(ArrayList<Produto> listaDeProdutos, boolean estadoEstoque) {
         Estoque.listaDeProdutos = new ArrayList<>();
         Estoque.estadoEstoque = estadoEstoque;
+    }
+
+    public void inserirNoVetor(Produto produto){
+        for (int i = 0; i < prod.length; i++){
+            if (prod[i] == null){
+                this.prod[i] = produto;
+                break;
+            }
+        }
     }
 
     //IOperarLista====================================================================================================
@@ -20,8 +38,8 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
     @Override
     public void listarProdutos(){
         if (estadoEstoque) {
-            System.out.println("Lista de Produtos:");
             if (listaDeProdutos != null) {
+                System.out.println("Lista de Produtos:");
                 for (Produto listaDeProduto : listaDeProdutos) {
                     System.out.println(listaDeProduto);
                 }
@@ -88,9 +106,8 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
             for (Produto produto : listaDeProdutos) {
                 if (produto.getNome().equalsIgnoreCase(nome)) {
                     System.out.println(produto);
-                }
+                } 
             }
-            System.out.print("Produto não encontrado");
         } else {
             System.out.print("Estoque está fechado\n");
         }
@@ -100,13 +117,11 @@ abstract public class Estoque implements IOperarEstoque, IOperarLista {
     public void acrescentarProduto(Produto nome, int quantidade){
         if (estadoEstoque) {
             for (Produto produto : listaDeProdutos){
-                if (nome.getNome().equals(nome.getNome())) {
-                    nome.quantidadeEmEstoque += quantidade;
+                if (produto.getNome().equals(nome.getNome())) {
+                    produto.quantidadeEmEstoque += quantidade;
                     System.out.println("Produto: " + produto);
                     System.out.println("Quantidade inserida no estoque: " + quantidade);
-                    break;  
-                } else {
-                    System.out.println("Produto não encontrado");
+                    break;
                 }
             }
         } else {

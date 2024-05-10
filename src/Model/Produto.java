@@ -30,8 +30,8 @@ abstract public class Produto {
     @Override
     public String toString() {
         return "Produto" + '\n' +
-                "Nome⭢ '" + nome + '\n' +
-                "Valor⭢ " + "R$" + preco + '\n' +
-                "Quantidade em estoque⭢ " + quantidadeEmEstoque + '\n';
+                "Nome= " + nome + '\n' +
+                "Valor= " + "R$" + preco + '\n' +
+                "Quantidade em estoque= " + quantidadeEmEstoque + '\n';
     }
 }
