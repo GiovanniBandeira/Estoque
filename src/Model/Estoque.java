@@ -8,22 +8,17 @@ public class Estoque implements IOperarEstoque, IOperarLista {
     public static ArrayList<Produto> listaDeProdutos = new ArrayList<>();
 
     //Erlom
-    Produto[] prod;
-    public static boolean estadoEstoque = false;
+    //Produto[] prod;
+    //public static boolean estadoEstoque = false;
     //==========
-    
+
 
     public Estoque(){}
-    
+    /* 
     public Estoque(int tamanho){
         this.prod = new Produto[tamanho];
     }
-
-    public Estoque(ArrayList<Produto> listaDeProdutos, boolean estadoEstoque) {
-        Estoque.listaDeProdutos = new ArrayList<>();
-        Estoque.estadoEstoque = estadoEstoque;
-    }
-
+   
     public void inserirNoVetor(Produto produto){
         for (int i = 0; i < prod.length; i++){
             if (prod[i] == null){
@@ -32,6 +27,12 @@ public class Estoque implements IOperarEstoque, IOperarLista {
             }
         }
     }
+    */
+
+    Estoque.estadoEstoque = estadoEstoque;
+    public Estoque(ArrayList<Produto> listaDeProdutos, boolean estadoEstoque) {
+        Estoque.listaDeProdutos = new ArrayList<>();
+
 
     //IOperarLista====================================================================================================
 
