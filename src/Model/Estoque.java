@@ -6,33 +6,14 @@ import java.util.ArrayList;
 
 public class Estoque implements IOperarEstoque, IOperarLista {
     public static ArrayList<Produto> listaDeProdutos = new ArrayList<>();
-
-    //Erlom
-    //Produto[] prod;
-    //public static boolean estadoEstoque = false;
-    //==========
-
+    public static boolean estadoEstoque = false;
 
     public Estoque(){}
-    /* 
-    public Estoque(int tamanho){
-        this.prod = new Produto[tamanho];
-    }
-   
-    public void inserirNoVetor(Produto produto){
-        for (int i = 0; i < prod.length; i++){
-            if (prod[i] == null){
-                this.prod[i] = produto;
-                break;
-            }
-        }
-    }
-    */
 
-    Estoque.estadoEstoque = estadoEstoque;
     public Estoque(ArrayList<Produto> listaDeProdutos, boolean estadoEstoque) {
         Estoque.listaDeProdutos = new ArrayList<>();
-
+        Estoque.estadoEstoque = estadoEstoque;
+    }
 
     //IOperarLista====================================================================================================
 
